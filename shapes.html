@@ -3,8 +3,42 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Untitled Document</title>
+
+<style>
+square {
+    position: relative;
+    margin: 20px;
+    display: inline-block; /* could be float */
+}
+</style>
+
 </head>
 
 <body>
+<div id="square" style="width: 200px">
+    <img src="http://dummyimage.com/50x50/000/fff.gif&text=50x50" class="sq-setter-w"/>
+    <div class="sq-content"></div>
+<script>
+	var x= document.createElement("CANVAS");
+	var box= document.getElementById("square");
+	var ctx = x.getContext("2d");
+	ctx.fillStyle = "blue";
+	var xpos=20;
+	var ypos=20;
+	var width=50;
+	var length=80;
+	ctx.fillRect(xpos,ypos,width,length);
+	document.body.appendChild(x);
+	var l=5;
+
+	function run(){
+
+	
+	Window.requestAnimationFrame(run, ctx);
+
+	}
+		run();
+
+</script>
 </body>
 </html>
