@@ -12,9 +12,22 @@ var canvas = document.getElementById("area"),
 	c = canvas.getContext("2d");
 	c.fillStyle= "black";
 	c.fillRect(0,0, 76, 76);
+	c.strokeStyle= "white";
+	c.lineWidth=10;
 	
 	
-}
+	c.beginPath();
+	c.strokeStyle = "black";
+	c.moveTo(100,100);
+	c.lineTo(150,200);
+	c.stroke();
+	
+	
+	c.font = "20px Arial";
+	c.fillText("Hello", 200,300);
+	
+	
+}   
 
 </script>
 <canvas id ="area" width="300" height="300">test</canvas>
