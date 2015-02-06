@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html lang="en">
+            <head>
+                        <title>IT WORKS</title>
+            </head>
+            <body>
+                       
+                        <script>
+ 
+                        var canvas, context;
+ 
+ 
+ 
+                                               
+                        canvas = document.createElement( 'canvas' );
+                        canvas.width = 256;                              
+                        canvas.height = 256;
+ 
+                        context = canvas.getContext( '2d' );
+                        document.body.appendChild( canvas );
+                        draw();
+                       
+                        //create a constant x-axis variable
+                        var xx = 1;
+ 
+            function draw() {
+ 
+                        var y = 6;
+                                               
+                                               
+                                               
+                        //this gives details of the canvas color and is needed
+                        //since we need to also create a new canvas each time
+                        //we animate
+                        context.fillStyle = 'rgb(245,245,245)';
+                        context.fillRect( 0, 0, 255, 255 );
+                       
+                        //create a red box
+                        //the a-axis is a variable so
+                        //it will update as the animation continues
+                        context.fillStyle = "red";
+                        context.fillRect(xx,5,150,100);
+                        xx++;
+                        requestAnimationFrame( draw );
+}
+ 
+                        </script>
+ 
+ 
+            </body>
+</html>
