@@ -4,40 +4,47 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Untitled Document</title>
 
-<style>
-square {
-    position: relative;
-    margin: 20px;
-    display: inline-block; /* could be float */
-}
-</style>
 
 </head>
 
 <body>
-<div id="square" style="width: 200px">
-    <img src="http://dummyimage.com/50x50/000/fff.gif&text=50x50" class="sq-setter-w"/>
-    <div class="sq-content"></div>
+
 <script>
-	var x= document.createElement("CANVAS");
-	var box= document.getElementById("square");
-	var ctx = x.getContext("2d");
-	ctx.fillStyle = "blue";
-	var xpos=20;
-	var ypos=20;
-	var width=50;
-	var length=80;
-	ctx.fillRect(xpos,ypos,width,length);
-	document.body.appendChild(x);
-	var l=5;
+	var canvas= document.createElement("CANVAS");
+	var ctx = canvas.getContext("2d");
+	canvas.width =1000;
+	canvas.height =1000;
+	ctx.fillStyle = "purple";
+	var colors=["purple", "grey", "black", "blue"];
+	//set these 
+	var xpos=80;
+	var ypos=80;
+	ctx.beginPath();
+	// x , y, radius of circle, starting point 
+	//ctx.arc(xpos,ypos,50, 0, Math.PI *2, true);
+	ctx.fillRect(xpos,ypos,50,50);
+	ctx.fill();	
+	document.body.appendChild(canvas);
+	run();
 
 	function run(){
+		ctx.fillStyle = "white";
+		ctx.fillRect(0,0,canvas.width,canvas.height);
+	
+		ctx.fillStyle = colors[Math.floor((Math.random() * 4) + 0)];	
+	//	ctx.arc(xpos,ypos,50, 0, Math.PI *2, true);
+		ctx.fillRect(xpos,ypos,50,50);
+
+				xpos++;
+				ypos++;
+
+		ctx.fill();	
+
 
 	
-	Window.requestAnimationFrame(run, ctx);
+	requestAnimationFrame(run);
 
 	}
-		run();
 
 </script>
 </body>
